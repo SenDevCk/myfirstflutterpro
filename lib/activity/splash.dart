@@ -3,7 +3,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myfirstflutterpro/second.dart';
+import 'package:myfirstflutterpro/activity/second.dart';
+
 
 class Spalsh extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _SpalshState extends State<Spalsh> {
                  child: Column(
                    children: [
                      Image.asset("assets/images/nblogo.png"),
-                     Text("E-wallets",
+                     Text("Seitra",
                          style: TextStyle(color: Colors.red, fontSize: 16)),
                    ],
                  ),
@@ -62,7 +63,7 @@ class _SpalshState extends State<Spalsh> {
 
   void goTonext(BuildContext context) async {
     await Future.delayed(Duration(seconds: 10));
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Second(),maintainState: false));
 
   }
 

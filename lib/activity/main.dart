@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstflutterpro/splash.dart';
+import 'package:myfirstflutterpro/activity/splash.dart';
+
 
 void main() {
   runApp(const MyApp());
