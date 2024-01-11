@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import 'package:myfirstflutterpro/database/StudentDB.dart';
 import 'package:myfirstflutterpro/models/Student.dart';
 
-import 'MenuPage.dart';
+import 'menu_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class StudentEntry extends StatefulWidget {
+  const StudentEntry({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<StudentEntry> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<StudentEntry> {
   final _formKey = GlobalKey<FormState>();
   Student _student=Student(name: '', email: '', mobile: '', enteredAt: '');
   @override

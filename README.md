@@ -15,4 +15,9 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-I have 
+I have practiced a lot of things in this app 
+1.Sqlite Data base 
+2.getting current location
+3.Form Validation
+4.all events 
+5.Permission check

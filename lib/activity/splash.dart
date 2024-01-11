@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myfirstflutterpro/activity/second.dart';
+import 'package:myfirstflutterpro/activity/login.dart';
 
 
 class Spalsh extends StatefulWidget {
@@ -63,7 +63,7 @@ class _SpalshState extends State<Spalsh> {
 
   void goTonext(BuildContext context) async {
     await Future.delayed(Duration(seconds: 10));
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>Second(),maintainState: false));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Login(),maintainState: false));
 
   }
 
@@ -77,5 +77,5 @@ void handleTimeout() {
   // callback function
   // Do some work.
   print("object coming");
- Get.offAll(Second());
+ Get.offAll(Login());
 }

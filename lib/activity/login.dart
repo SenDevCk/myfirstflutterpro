@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstflutterpro/activity/MenuPage.dart';
+import 'package:myfirstflutterpro/activity/menu_page.dart';
 
 
 
-class Second extends StatefulWidget {
-  const Second({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<Second> createState() => _SecondState();
+  State<Login> createState() => _SecondState();
 }
 
-class _SecondState extends State<Second> {
+class _SecondState extends State<Login> {
 
   final _formKey = GlobalKey<FormState>();
 
@@ -107,7 +107,7 @@ class _SecondState extends State<Second> {
                           context, MaterialPageRoute(builder: (_) => MenuPage()));
                     }
                   },
-                  child: const Text('Submit',style: TextStyle(color: Colors.white, fontSize: 25),)
+                  child: const Text('Login',style: TextStyle(color: Colors.white, fontSize: 25),)
                 ),
               ),
              /* SizedBox(
