@@ -15,7 +15,7 @@ class StudentEntry extends StatefulWidget {
 
 class _HomePageState extends State<StudentEntry> {
   final _formKey = GlobalKey<FormState>();
-  Student _student=Student(name: '', email: '', mobile: '', enteredAt: '');
+  Student _student=Student(name: '', email: '', mobile: '', userId: '', password: '', enteredAt: '');
   @override
   void initState() {
     // TODO: implement initState
@@ -31,7 +31,7 @@ class _HomePageState extends State<StudentEntry> {
             color: Colors.white, //change your color here
           ),
           backgroundColor: Colors.deepOrange,
-          title: Text("Student", style: TextStyle(color: Colors.white)),
+          title: Text("Create Account", style: TextStyle(color: Colors.white)),
         ),
         body: Form(
           key: _formKey,
@@ -52,6 +52,7 @@ class _HomePageState extends State<StudentEntry> {
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
+                            contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
                             hintText: 'Enter Name',
                             labelText: 'name'))),
                 Padding(
@@ -72,7 +73,10 @@ class _HomePageState extends State<StudentEntry> {
                       decoration: InputDecoration(
                           labelText: 'Email',
                           hintText: 'abc@gmail.com',
-                          border: OutlineInputBorder()),
+                          border: OutlineInputBorder(),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                      ),
+
                     )),
                 Padding(
                   padding:
@@ -92,9 +96,54 @@ class _HomePageState extends State<StudentEntry> {
                     decoration: InputDecoration(
                         labelText: 'phone',
                         hintText: '10 digits only',
-                        border: OutlineInputBorder()
+                        border: OutlineInputBorder(),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
                     ),
                   ),
+                ),
+                Padding(padding: EdgeInsets.only(left: 15, top: 10, right: 15, bottom: 0),
+                    child: TextFormField(
+                        keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        labelText: 'UserId',
+                            hintText: 'No any spacial character or space',
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter UserID';
+                        }
+                        if (value.length<5) {
+                          return 'Please enter valid userid min 5 character';
+                        }
+                        _student.password=value;
+                        return null;
+                      },
+                    ),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(left: 15,top: 10,right: 15,bottom: 0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
+                        labelText: 'Password',
+                          hintText: '*****'
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter Password';
+                        }
+                        if (value.length<5) {
+                          return 'Please enter valid password min 5 character';
+                        }
+                        _student.password=value;
+                        return null;
+                      },
+
+                    ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 10),
@@ -112,7 +161,8 @@ class _HomePageState extends State<StudentEntry> {
                       style: TextStyle(color: Colors.white, fontSize: 25),
                     ),
                   ),
-                )
+                ),
+
               ],
             ),
           ),

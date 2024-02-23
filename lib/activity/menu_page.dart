@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myfirstflutterpro/activity/student_entry.dart';
 import 'package:myfirstflutterpro/activity/student_list.dart';
-import 'package:myfirstflutterpro/models/Student.dart';
+
 
 import '../database/StudentDB.dart';
 

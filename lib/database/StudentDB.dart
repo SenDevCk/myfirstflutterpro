@@ -33,7 +33,7 @@ class StudentDB {
       'SELECT * FROM $tableName'
     );
     data.forEach((element) {
-      students.add(Student(name: element["name"].toString(), email: element["email"].toString(), mobile: element["mobile"].toString(), enteredAt: element["enteredAt"].toString()));
+      students.add(Student(name: element["name"].toString(), email: element["email"].toString(), mobile: element["mobile"].toString(),userId: element["userId"].toString(),password: element["password"].toString(), enteredAt: element["enteredAt"].toString()));
     });
     return students;
   }

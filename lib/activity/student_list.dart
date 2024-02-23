@@ -33,7 +33,11 @@ class _StudentListState extends State<StudentList> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Students'),
+        iconTheme: IconThemeData(
+          color: Colors.white, //change your color here
+        ),
+        backgroundColor: Colors.deepOrange,
+        title: Text("Student Entry",style: TextStyle(color: Colors.white)),
       ),
       body: ListView.builder(
         itemCount: count,
