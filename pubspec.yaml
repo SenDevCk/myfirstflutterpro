@@ -43,6 +43,7 @@ dev_dependencies:
   sqflite: ^2.1.0+1
   permission_handler: ^11.2.0
   readsms: ^0.0.2+2
+  reactive_forms: ^14.1.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

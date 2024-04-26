@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myfirstflutterpro/activity/employee.dart';
 import 'package:myfirstflutterpro/activity/student_entry.dart';
 import 'package:myfirstflutterpro/activity/student_list.dart';
 
@@ -103,13 +104,22 @@ class _MenuPageState extends State<MenuPage> {
                               child: Image.asset('assets/images/nblogo.png'),
                             ),
                             Expanded(
+                              child:Material(
+                                child:InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context, MaterialPageRoute(builder: (_) => EmployeeEntry()));
+                                    },
                                 child: Text(
-                              'Transaction Otp',
+                              'Employee Entry',
                               style: TextStyle(
                                   color: Colors.blueGrey,
                                   fontSize: 11,
                                   backgroundColor: Colors.black12),
-                            ))
+                            )
+                                )
+                              )
+                            )
                           ],
                         )),
                     Expanded(
