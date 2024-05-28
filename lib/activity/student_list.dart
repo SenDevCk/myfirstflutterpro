@@ -42,11 +42,11 @@ class _StudentListState extends State<StudentList> {
       body: ListView.builder(
         itemCount: count,
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(
+          return (students.length>0)?ListTile(
             title: Text(
               students[index].name, style: TextStyle(color: Colors.blue),),
             subtitle: Text(students[index].mobile),
-          );
+          ):Text("No data Found !",style: TextStyle(color: Colors.red),);
         },
       ),
     );

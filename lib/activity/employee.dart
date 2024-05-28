@@ -1,3 +1,7 @@
+
+
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
@@ -20,7 +24,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
     'gender': FormControl<String>(
         validators: [Validators.required]),
     'salary': FormControl<double>(
-        validators: [Validators.required, Validators.number, Validators.min(1000)])
+        validators: [Validators.required, Validators.min(1000)])
   });
 
   @override
@@ -32,40 +36,67 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
           color: Colors.white, //change your color here
         ),
         backgroundColor: Colors.deepOrange,
-        title: Text("Student Entry", style: TextStyle(color: Colors.white)),
+        title: Text("Employee Entry", style: TextStyle(color: Colors.white)),
       ),
-      body: ReactiveForm(
+      body: SingleChildScrollView(child:Container(
+        margin: new EdgeInsets.all(15.0),
+        child: ReactiveForm(
         formGroup: form,
         child: Column(
-           children: [
-             Expanded(
-               child:Column(
-                 children: [
-                   ReactiveTextField(
+           children: <Widget>[
+                    Padding(
+                    padding: EdgeInsets.only(
+                    left: 15, top: 10, right: 15, bottom: 0),
+                    child: ReactiveTextField(
                      formControlName: 'name',
+                     decoration: InputDecoration(
+                       labelText: 'Name',
+                       border: OutlineInputBorder(),
+                       contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                     ),
+                      textInputAction: TextInputAction.next,
+                     keyboardType: TextInputType.text,
                      validationMessages: {
                        'required': (error) => 'The name must not be empty',
                        'minLength': (error) => 'Min length should be 3'
                      },
-                   ),
-                   ReactiveTextField(
+                   )),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: 15, top: 10, right: 15, bottom: 0),
+                   child: ReactiveTextField(
                      formControlName: 'fatherName',
+                     textInputAction: TextInputAction.next,
+                     decoration: InputDecoration(
+                       labelText: 'Father Name',
+                       border: OutlineInputBorder(),
+                       contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                     ),
+                     keyboardType: TextInputType.text,
                      validationMessages: {
                        'required': (error) => 'The father name must not be empty',
                        'minLength': (error) => 'Min length should be 3'
                      },
-                   ),
-                   ReactiveTextField(
+                   )),
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 10, right: 15, bottom: 0),
+              child: ReactiveTextField(
                      formControlName: 'email',
+                     textInputAction: TextInputAction.next,
+                     decoration: InputDecoration(
+                       labelText: 'Email',
+                       border: OutlineInputBorder(),
+                       contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                     ),
+                     keyboardType: TextInputType.emailAddress,
                      validationMessages: {
                        'required': (error) => 'The name must not be empty',
                        'email': (error) => 'please provide right email'
                      },
-                   ),
-                 ],
-               ),
-             ),
-             Expanded(child:
+                   )),
+
+
+            /* Expanded(child:
                  Row(
                    children: [
                      Text("gender", style: TextStyle(color: Colors.white)),
@@ -73,20 +104,45 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                      ReactiveRadio(value: 'F',formControlName: 'gender',)
                    ],
                  )
-             ),
-             Expanded(
+             ),*/
+             Padding(
+                 padding: EdgeInsets.only(
+                     left: 15, top: 10, right: 15, bottom: 0),
                  child: ReactiveTextField(
                    formControlName: 'salary',
+                   decoration: InputDecoration(
+                     labelText: 'Salary Amount',
+                     border: OutlineInputBorder(),
+                     contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                   ),
+                   keyboardType: TextInputType.number,
                    validationMessages: {
                      'required':(error)=>'Salary Required !',
-                     'min':(error)=>'min salary must be 1000 !'
+                     'min':(error)=>'Min amount 1000 !'
                    },
                  )
 
+             ),
+             Padding(
+                 padding: EdgeInsets.only(
+                     left: 15, top: 10, right: 15, bottom: 0),
+             child: MaterialButton(
+               onPressed: () => {
+                 if(!form.invalid){
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Please Provide write data"),
+                    ))
+                 }else{
+                     log('data : $form.value')
+                  }
+               },
+               child: Text('Submit'),
+             )
              )
            ],
         )
       ),
-    );
+    )
+    ));
   }
 }
