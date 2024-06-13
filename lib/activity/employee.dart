@@ -45,22 +45,23 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
         child: Column(
            children: <Widget>[
                     Padding(
-                    padding: EdgeInsets.only(
-                    left: 15, top: 10, right: 15, bottom: 0),
-                    child: ReactiveTextField(
-                     formControlName: 'name',
-                     decoration: InputDecoration(
-                       labelText: 'Name',
-                       border: OutlineInputBorder(),
-                       contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-                     ),
-                      textInputAction: TextInputAction.next,
-                     keyboardType: TextInputType.text,
-                     validationMessages: {
-                       'required': (error) => 'The name must not be empty',
-                       'minLength': (error) => 'Min length should be 3'
-                     },
-                   )),
+                      padding: EdgeInsets.only(
+                      left: 15, top: 10, right: 15, bottom: 0),
+                      child: ReactiveTextField(
+                       formControlName: 'name',
+                       decoration: InputDecoration(
+                         labelText: 'Name',
+                         border: OutlineInputBorder(),
+                         contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                       ),
+                        textInputAction: TextInputAction.next,
+                       keyboardType: TextInputType.text,
+                       validationMessages: {
+                         'required': (error) => 'The name must not be empty',
+                         'minLength': (error) => 'Min length should be 3'
+                       },
+                     )
+                    ),
             Padding(
               padding: EdgeInsets.only(
                   left: 15, top: 10, right: 15, bottom: 0),
@@ -77,7 +78,8 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                        'required': (error) => 'The father name must not be empty',
                        'minLength': (error) => 'Min length should be 3'
                      },
-                   )),
+                   )
+            ),
           Padding(
             padding: EdgeInsets.only(left: 15, top: 10, right: 15, bottom: 0),
               child: ReactiveTextField(
@@ -93,7 +95,8 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                        'required': (error) => 'The name must not be empty',
                        'email': (error) => 'please provide right email'
                      },
-                   )),
+                   )
+          ),
 
 
             /* Expanded(child:
@@ -133,7 +136,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                       content: Text("Please Provide write data"),
                     ))
                  }else{
-                     log('data : $form.value')
+                     log('$form.value')
                   }
                },
                child: Text('Submit'),
