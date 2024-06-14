@@ -49,7 +49,7 @@ class _MenuPageState extends State<MenuPage> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20.0),
                                   child: Image.asset('assets/images/nblogo.png',
-                                      width: 110.0, height: 110.0),
+                                      width: 80.0, height: 80.0),
                                 ),
                               ),
                             )),
@@ -79,7 +79,7 @@ class _MenuPageState extends State<MenuPage> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20.0),
                                   child: Image.asset('assets/images/nblogo.png',
-                                      width: 110.0, height: 110.0),
+                                      width: 80.0, height: 80.0),
                                 ),
                               ),
                             )),
@@ -110,7 +110,7 @@ class _MenuPageState extends State<MenuPage> {
                                       MaterialPageRoute(
                                           builder: (_) => EmployeeEntry()));
                                 },
-                                child: Image.asset('assets/images/nblogo.png'),
+                                child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0),
                               ),
                             )),
                             Expanded(
@@ -128,10 +128,10 @@ class _MenuPageState extends State<MenuPage> {
                         child: Column(
                           children: [
                             Expanded(
-                                child: Image.asset('assets/images/nblogo.png')),
+                                child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0)),
                             Expanded(
                                 child: Text(
-                              'Transaction Otp',
+                              'Employees on Map',
                               style: TextStyle(
                                   color: Colors.blueGrey, fontSize: 11),
                             ))
@@ -148,7 +148,7 @@ class _MenuPageState extends State<MenuPage> {
                         child: Column(
                           children: [
                             Expanded(
-                              child: Image.asset('assets/images/nblogo.png'),
+                              child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0),
                             ),
                             Expanded(
                                 child: Text(
@@ -165,7 +165,7 @@ class _MenuPageState extends State<MenuPage> {
                         child: Column(
                           children: [
                             Expanded(
-                                child: Image.asset('assets/images/nblogo.png')),
+                                child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0)),
                             Expanded(
                                 child: Text(
                               'Transaction Otp',
