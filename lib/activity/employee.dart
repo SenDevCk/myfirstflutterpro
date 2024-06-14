@@ -1,6 +1,7 @@
 
 
 import 'dart:developer';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -97,17 +98,25 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                      },
                    )
           ),
+          Padding(
+              padding: EdgeInsets.only(left: 15,top: 10,right: 15,bottom: 0),
+              child: Row(
+                children: <Widget>[
+                   ReactiveRadio(
+                       value: 'M',
+                     formControlName: 'gender',
+                     autofocus: true,
+                     onChanged: (control) => {
+
+                     },
+                   ),
+                  ReactiveRadio(value: 'F',
+                    formControlName: 'gender',)
+                ],
+              )
+          ),
 
 
-            /* Expanded(child:
-                 Row(
-                   children: [
-                     Text("gender", style: TextStyle(color: Colors.white)),
-                     ReactiveRadio(value: 'M',formControlName: 'gender'),
-                     ReactiveRadio(value: 'F',formControlName: 'gender',)
-                   ],
-                 )
-             ),*/
              Padding(
                  padding: EdgeInsets.only(
                      left: 15, top: 10, right: 15, bottom: 0),
@@ -124,7 +133,6 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                      'min':(error)=>'Min amount 1000 !'
                    },
                  )
-
              ),
              Padding(
                  padding: EdgeInsets.only(
@@ -136,7 +144,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                       content: Text("Please Provide write data"),
                     ))
                  }else{
-                     log('$form.value')
+                     //log('$form.value')
                   }
                },
                child: Text('Submit'),
