@@ -4,7 +4,6 @@ import 'package:myfirstflutterpro/activity/employee.dart';
 import 'package:myfirstflutterpro/activity/student_entry.dart';
 import 'package:myfirstflutterpro/activity/student_list.dart';
 
-
 import '../database/StudentDB.dart';
 
 class MenuPage extends StatefulWidget {
@@ -15,7 +14,6 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +42,9 @@ class _MenuPageState extends State<MenuPage> {
                               child: InkWell(
                                 onTap: () {
                                   Navigator.push(
-                                      context, MaterialPageRoute(builder: (_) => StudentEntry()));
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => StudentEntry()));
                                 },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20.0),
@@ -69,19 +69,20 @@ class _MenuPageState extends State<MenuPage> {
                           children: [
                             Expanded(
                                 child: Material(
-                                  child: InkWell(
-                                    onTap: () {
-                                        Navigator.push(
-                                          context, MaterialPageRoute(builder: (_) => StudentList()));
-                                    },
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      child: Image.asset('assets/images/nblogo.png',
-                                          width: 110.0, height: 110.0),
-                                    ),
-                                  ),
-                                )
-                            ),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => StudentList()));
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  child: Image.asset('assets/images/nblogo.png',
+                                      width: 110.0, height: 110.0),
+                                ),
+                              ),
+                            )),
                             Expanded(
                                 child: Text(
                               'Student List',
@@ -101,25 +102,25 @@ class _MenuPageState extends State<MenuPage> {
                         child: Column(
                           children: [
                             Expanded(
-                              child: Image.asset('assets/images/nblogo.png'),
-                            ),
+                                child: Material(
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => EmployeeEntry()));
+                                },
+                                child: Image.asset('assets/images/nblogo.png'),
+                              ),
+                            )),
                             Expanded(
-                              child:Material(
-                                child:InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context, MaterialPageRoute(builder: (_) => EmployeeEntry()));
-                                    },
                                 child: Text(
                               'Employee Entry',
                               style: TextStyle(
                                   color: Colors.blueGrey,
                                   fontSize: 11,
                                   backgroundColor: Colors.black12),
-                            )
-                                )
-                              )
-                            )
+                            ))
                           ],
                         )),
                     Expanded(

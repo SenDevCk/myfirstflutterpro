@@ -1,7 +1,7 @@
 
 
 import 'dart:developer';
-import 'dart:math';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
         validators: [Validators.required, Validators.minLength(3)]),
     'email': FormControl<String>(
         validators: [Validators.required, Validators.email,]),
-    'gender': FormControl<String>(
+    'gender': FormControl<String>(value: 'M',
         validators: [Validators.required]),
     'salary': FormControl<double>(
         validators: [Validators.required, Validators.min(1000)])
@@ -102,16 +102,20 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
               padding: EdgeInsets.only(left: 15,top: 10,right: 15,bottom: 0),
               child: Row(
                 children: <Widget>[
-                   ReactiveRadio(
-                       value: 'M',
-                     formControlName: 'gender',
-                     autofocus: true,
-                     onChanged: (control) => {
+                  Text('Gender',style: TextStyle(color: Colors.black,fontSize: 15),),
+                   Padding(padding:EdgeInsets.only(right: 10)),
+                  ReactiveRadio(
+                    value: 'M',
+                    formControlName: 'gender',
+                    autofocus: true,
 
-                     },
-                   ),
+                  ),
+                   Text('Male'),
                   ReactiveRadio(value: 'F',
-                    formControlName: 'gender',)
+                    formControlName: 'gender',
+                  ),
+                  Text('Female'),
+
                 ],
               )
           ),
@@ -137,14 +141,14 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
              Padding(
                  padding: EdgeInsets.only(
                      left: 15, top: 10, right: 15, bottom: 0),
-             child: MaterialButton(
+             child: FilledButton(
                onPressed: () => {
-                 if(!form.invalid){
+                 if(form.invalid){
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Please Provide write data"),
                     ))
                  }else{
-                     //log('$form.value')
+                      log(form.value.toString())
                   }
                },
                child: Text('Submit'),
