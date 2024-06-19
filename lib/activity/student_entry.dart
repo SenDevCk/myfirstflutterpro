@@ -147,7 +147,10 @@ class _HomePageState extends State<StudentEntry> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 10),
-                  child: FilledButton(
+                  child: MaterialButton(
+                    minWidth: double.infinity,
+                    height: 50,
+                    color: Colors.deepPurple,
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         //print(_student.toString());

@@ -5,6 +5,7 @@ import 'package:myfirstflutterpro/activity/student_entry.dart';
 import 'package:myfirstflutterpro/activity/student_list.dart';
 
 import '../database/StudentDB.dart';
+import 'navigation_menu.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -110,7 +111,8 @@ class _MenuPageState extends State<MenuPage> {
                                       MaterialPageRoute(
                                           builder: (_) => EmployeeEntry()));
                                 },
-                                child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0),
+                                child: Image.asset('assets/images/nblogo.png',
+                                    width: 80.0, height: 80.0),
                               ),
                             )),
                             Expanded(
@@ -128,10 +130,21 @@ class _MenuPageState extends State<MenuPage> {
                         child: Column(
                           children: [
                             Expanded(
-                                child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0)),
+                                child: Material(
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => NavigationPage()));
+                                },
+                                child: Image.asset('assets/images/nblogo.png',
+                                    width: 80.0, height: 80.0),
+                              ),
+                            )),
                             Expanded(
                                 child: Text(
-                              'Employees on Map',
+                              'Navigation Menu',
                               style: TextStyle(
                                   color: Colors.blueGrey, fontSize: 11),
                             ))
@@ -148,11 +161,12 @@ class _MenuPageState extends State<MenuPage> {
                         child: Column(
                           children: [
                             Expanded(
-                              child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0),
+                              child: Image.asset('assets/images/nblogo.png',
+                                  width: 80.0, height: 80.0),
                             ),
                             Expanded(
                                 child: Text(
-                              'Transaction Otp',
+                              'Map',
                               style: TextStyle(
                                   color: Colors.blueGrey,
                                   fontSize: 11,
@@ -165,7 +179,8 @@ class _MenuPageState extends State<MenuPage> {
                         child: Column(
                           children: [
                             Expanded(
-                                child: Image.asset('assets/images/nblogo.png',width: 80.0, height: 80.0)),
+                                child: Image.asset('assets/images/nblogo.png',
+                                    width: 80.0, height: 80.0)),
                             Expanded(
                                 child: Text(
                               'Transaction Otp',

@@ -141,7 +141,10 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
              Padding(
                  padding: EdgeInsets.only(
                      left: 15, top: 10, right: 15, bottom: 0),
-             child: FilledButton(
+             child: MaterialButton(
+               color: Colors.deepPurple,
+               height: 50,
+               minWidth: double.infinity,
                onPressed: () => {
                  if(form.invalid){
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

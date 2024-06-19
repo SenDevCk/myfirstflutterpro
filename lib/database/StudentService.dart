@@ -25,7 +25,7 @@ class StudentService {
     var database = await openDatabase(path,
       version: 1,
       onCreate : create,
-      singleInstance : true
+      singleInstance : true 
     );
     return
     database;
