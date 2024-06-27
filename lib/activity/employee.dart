@@ -145,13 +145,13 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                color: Colors.deepPurple,
                height: 50,
                minWidth: double.infinity,
-               onPressed: () => {
+               onPressed: ()  {
                  if(form.invalid){
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Please Provide write data"),
-                    ))
+                    ));
                  }else{
-                      log(form.value.toString())
+                      log(form.value.toString());
                   }
                },
                child: Text('Submit'),
