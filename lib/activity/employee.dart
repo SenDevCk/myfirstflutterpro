@@ -47,7 +47,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
            children: <Widget>[
                     Padding(
                       padding: EdgeInsets.only(
-                      left: 15, top: 10, right: 15, bottom: 0),
+                      left: 15, top: 5, right: 15, bottom: 5),
                       child: ReactiveTextField(
                        formControlName: 'name',
                        decoration: InputDecoration(
@@ -65,7 +65,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                     ),
             Padding(
               padding: EdgeInsets.only(
-                  left: 15, top: 10, right: 15, bottom: 0),
+                  left: 15, top: 5, right: 15, bottom: 5),
                    child: ReactiveTextField(
                      formControlName: 'fatherName',
                      textInputAction: TextInputAction.next,
@@ -82,7 +82,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                    )
             ),
           Padding(
-            padding: EdgeInsets.only(left: 15, top: 10, right: 15, bottom: 0),
+            padding: EdgeInsets.only(left: 15, top: 5, right: 15, bottom: 5),
               child: ReactiveTextField(
                      formControlName: 'email',
                      textInputAction: TextInputAction.next,
@@ -99,7 +99,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
                    )
           ),
           Padding(
-              padding: EdgeInsets.only(left: 15,top: 10,right: 15,bottom: 0),
+              padding: EdgeInsets.only(left: 15,top: 5,right: 15,bottom: 5),
               child: Row(
                 children: <Widget>[
                   Text('Gender',style: TextStyle(color: Colors.black,fontSize: 15),),
@@ -123,7 +123,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
 
              Padding(
                  padding: EdgeInsets.only(
-                     left: 15, top: 10, right: 15, bottom: 0),
+                     left: 15, top: 5, right: 15, bottom: 5),
                  child: ReactiveTextField(
                    formControlName: 'salary',
                    decoration: InputDecoration(
@@ -140,7 +140,7 @@ class _EmployeeEntryState extends State<EmployeeEntry> {
              ),
              Padding(
                  padding: EdgeInsets.only(
-                     left: 15, top: 10, right: 15, bottom: 0),
+                     left: 15, top: 5, right: 15, bottom: 5),
              child: MaterialButton(
                color: Colors.deepPurple,
                height: 50,
